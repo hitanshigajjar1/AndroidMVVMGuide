@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <!-- Main Fragment -->
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.ext.androidmvvmguide.ui.main.MainFragment"
+        android:label="Users">
+
+        <!-- Action to navigate to Details -->
+        <action
+            android:id="@+id/action_main_to_details"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+
+    <!-- Details Fragment -->
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.ext.androidmvvmguide.ui.details.DetailsFragment"
+        android:label="User Details">
+
+        <!-- Navigation Arguments -->
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="0"/>
+
+        <argument
+            android:name="userName"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
